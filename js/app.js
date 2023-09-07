@@ -9,6 +9,7 @@ const instagramLinks = document.querySelectorAll(".fa-instagram");
 const linkedInLinks = document.querySelectorAll(".fa-linkedin");
 
 //DATA IMPORTS
+import { mySocialLinks } from "./data.js";
 
 // LOGIC
 // FIXED NAVBAR
@@ -34,15 +35,15 @@ date.textContent = new Date().getFullYear();
 // INCLUDE REAL LINKS IN SOCIAL ICONS IN FOOTERS AND SIDEBAR
 facebookLinks.forEach((link) => {
   const parentLink = link.parentElement;
-  parentLink.setAttribute("href", "#");
+  parentLink.setAttribute("href", mySocialLinks.fbLink);
 });
 
 instagramLinks.forEach((link) => {
   const parentLink = link.parentElement;
-  parentLink.setAttribute("href", "#");
+  parentLink.setAttribute("href", mySocialLinks.instaLink);
 });
 
 linkedInLinks.forEach((link) => {
   const parentLink = link.parentElement;
-  parentLink.setAttribute("href", "#");
+  parentLink.setAttribute("href", mySocialLinks.linkedInLink);
 });
