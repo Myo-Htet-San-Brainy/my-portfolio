@@ -450,6 +450,20 @@ nav {
 
 .hero-info-job {
   margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.hero-info-resume {
+  color: var(--primary-600);
+  text-transform: capitalize;
+  letter-spacing: var(--letterSpacing);
+  text-decoration: underline;
+  font-style: italic;
+  transition: var(--transition);
+}
+
+.hero-info-resume:hover {
+  color: var(--white);
 }
 
 @media screen and (min-width: 992px) {

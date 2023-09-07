@@ -8,10 +8,11 @@ const facebookLinks = document.querySelectorAll(".fa-facebook");
 const instagramLinks = document.querySelectorAll(".fa-instagram");
 const linkedInLinks = document.querySelectorAll(".fa-linkedin");
 
-//DATA IMPORTS
+//IMPORTS
 import { mySocialLinks } from "./data.js";
+import { addResumeLink } from "./home.js";
 
-// LOGIC
+// GENERAL LOGIC
 // FIXED NAVBAR
 window.addEventListener("scroll", () => {
   if (window.scrollY > 80) {
@@ -47,3 +48,6 @@ linkedInLinks.forEach((link) => {
   const parentLink = link.parentElement;
   parentLink.setAttribute("href", mySocialLinks.linkedInLink);
 });
+
+// HOME LOGIC
+addResumeLink();
