@@ -10,7 +10,6 @@ const linkedInLinks = document.querySelectorAll(".fa-linkedin");
 
 //IMPORTS
 import { mySocialLinks } from "./data.js";
-import { addResumeLink } from "./home.js";
 
 // GENERAL LOGIC
 // FIXED NAVBAR
@@ -48,6 +47,3 @@ linkedInLinks.forEach((link) => {
   const parentLink = link.parentElement;
   parentLink.setAttribute("href", mySocialLinks.linkedInLink);
 });
-
-// HOME LOGIC
-addResumeLink();
