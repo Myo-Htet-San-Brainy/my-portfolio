@@ -59,7 +59,7 @@ export const allMyProjects = [
   {
     id: 1,
     img: "https://res.cloudinary.com/dhwwdk7uq/image/upload/v1690886300/21daysUserImages/file_ed6nam.jpg",
-    name: "21Days Project",
+    name: "21Daysx Project",
     text: "Create a habit by doing it 21 days consecutively!!!",
     gitHubLink: "https://github.com/Myo-Htet-San-Brainy/21-days-backend.git",
     siteUrl:
@@ -68,7 +68,7 @@ export const allMyProjects = [
   {
     id: 2,
     img: "https://res.cloudinary.com/dhwwdk7uq/image/upload/v1690885358/21daysUserImages/file_msh1qo.jpg",
-    name: "Web Project",
+    name: "Webx Project",
     text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore magni ad deleniti deserunt dolore fugit, harum ex provident voluptas nemo!",
     gitHubLink: "#",
     siteUrl:
@@ -77,7 +77,7 @@ export const allMyProjects = [
   {
     id: 3,
     img: "https://res.cloudinary.com/dhwwdk7uq/image/upload/v1690885302/21daysUserImages/file_d4a9jz.jpg",
-    name: "Android Project",
+    name: "Androidx Project",
     text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore magni ad deleniti deserunt dolore fugit, harum ex provident voluptas nemo!",
     gitHubLink: "#",
     siteUrl:

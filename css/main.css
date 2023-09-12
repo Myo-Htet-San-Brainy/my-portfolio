@@ -445,6 +445,13 @@ nav {
   outline-color: var(--primary-500);
 }
 
+.no-items-search {
+  color: var(--primary-500);
+  font-size: 3rem;
+  text-align: center;
+  /* border: 2px solid yellow; */
+}
+
 /* END OF FORM */
 
 /* hero */
@@ -680,6 +687,10 @@ nav {
 
   .project {
     flex: 0 0 45%;
+  }
+
+  .no-items-search {
+    margin: 0 auto;
   }
 }
 
