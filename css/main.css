@@ -188,6 +188,7 @@ ul {
   box-shadow: var(--shadow-2);
   padding: 2rem 2.5rem;
   margin: 3rem auto;
+  border: 2px solid yellowgreen;
 }
 .form-label {
   display: block;
@@ -202,7 +203,8 @@ ul {
   padding: 0.375rem 0.75rem;
   border-radius: var(--borderRadius);
   background: var(--backgroundColor);
-  border: 1px solid var(--grey-200);
+  /* border: 1px solid var(--grey-200); */
+  border: 2px solid yellowgreen;
 }
 
 .form-row {
@@ -421,6 +423,30 @@ nav {
   color: var(--primary-500);
 }
 
+/* FORM */
+
+.search-form {
+  width: 90%;
+  margin: 0 auto;
+  max-width: var(--fixed-width);
+  /* border: 2px solid slateblue; */
+}
+
+.search-input {
+  width: 100%;
+  border-radius: 0.4rem;
+  border: transparent;
+  outline-color: transparent;
+  padding: 0.7rem;
+  transition: var(--transition);
+}
+
+.search-input:focus {
+  outline-color: var(--primary-500);
+}
+
+/* END OF FORM */
+
 /* hero */
 .hero {
   background-color: var(--primary-200);
@@ -572,6 +598,7 @@ nav {
 /* ALL PROJECTS */
 .all-projects {
   background-color: var(--primary-200);
+  padding-top: 2rem;
 }
 
 .projects-center {
