@@ -69,3 +69,5 @@ function fetchClientData(id) {
   });
   return clickedWork[0];
 }
+
+console.log("hi");
