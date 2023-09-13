@@ -79,11 +79,11 @@ function displayMetrics(element) {
 
   const increase = setInterval(() => {
     if (initialValue > value) {
-      element.textContent = value;
+      element.textContent = `${value}+`;
       clearInterval(increase);
       return;
     }
-    element.textContent = initialValue;
+    element.textContent = `${initialValue}+`;
     initialValue += increment;
   }, 1);
 }
