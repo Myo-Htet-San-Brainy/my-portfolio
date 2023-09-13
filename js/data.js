@@ -93,3 +93,9 @@ export const allMyProjects = [
       "https://www.udemy.com/course/javascript-tutorial-for-beginners-w/learn/lecture/11522432#overview",
   },
 ];
+
+export const metrics = {
+  clients: 10,
+  workingHours: 100,
+  projects: 10,
+};

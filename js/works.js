@@ -5,9 +5,10 @@ const modal = document.querySelector(".modal-overlay");
 const clientName = document.querySelector(".client-name");
 const clientReview = document.querySelector(".client-review");
 const closeModalBtn = document.querySelector(".modal-close-btn");
+const metricElements = [...document.querySelectorAll(".metric-number")];
 
 //IMPORTS
-import { works } from "./data.js";
+import { works, metrics } from "./data.js";
 
 //LOGIC
 // display works and make 'client info' btns work
@@ -69,3 +70,22 @@ function fetchClientData(id) {
   });
   return clickedWork[0];
 }
+
+//display metrics logic
+function displayMetrics(element) {
+  const value = metrics[element.dataset.metrictype];
+  const increment = Math.ceil(value / 1000);
+  let initialValue = 0;
+
+  const increase = setInterval(() => {
+    if (initialValue > value) {
+      element.textContent = value;
+      clearInterval(increase);
+      return;
+    }
+    element.textContent = initialValue;
+    initialValue += increment;
+  }, 1);
+}
+
+metricElements.forEach((element) => displayMetrics(element));

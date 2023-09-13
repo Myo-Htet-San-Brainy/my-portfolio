@@ -454,6 +454,44 @@ nav {
 
 /* END OF FORM */
 
+/* METRICS */
+
+.metrics-container {
+  display: none;
+}
+
+@media screen and (min-width: 900px) {
+  .metrics-container {
+    width: 90%;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+
+  .metric {
+    flex-basis: 15rem;
+    background-color: var(--white);
+    border-radius: var(--borderRadius);
+    padding: 1rem;
+    border-bottom: 3px solid var(--primary-500);
+  }
+
+  .metric-number {
+    margin-bottom: 0.5rem;
+    font-size: 3rem;
+    font-weight: bold;
+  }
+
+  .metric span {
+    text-transform: capitalize;
+    letter-spacing: var(--letterSpacing);
+  }
+}
+
+/* END OF METRICS */
+
 /* hero */
 .hero {
   background-color: var(--primary-200);
