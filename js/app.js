@@ -9,7 +9,7 @@ const instagramLinks = document.querySelectorAll(".fa-instagram");
 const linkedInLinks = document.querySelectorAll(".fa-linkedin");
 
 //IMPORTS
-import { mySocialLinks } from "./data.js";
+import fetchData from "./fetchData.js";
 
 // GENERAL LOGIC
 // FIXED NAVBAR
@@ -33,17 +33,27 @@ closeSidebarBtn.addEventListener("click", () => {
 date.textContent = new Date().getFullYear();
 
 // INCLUDE REAL LINKS IN SOCIAL ICONS IN FOOTERS AND SIDEBAR
-facebookLinks.forEach((link) => {
-  const parentLink = link.parentElement;
-  parentLink.setAttribute("href", mySocialLinks.fbLink);
-});
 
-instagramLinks.forEach((link) => {
-  const parentLink = link.parentElement;
-  parentLink.setAttribute("href", mySocialLinks.instaLink);
-});
+async function setLinks() {
+  //fetch social links
+  const mySocialLinks = await fetchData(
+    "https://my-portfolio-a88p.onrender.com/api/v1/links/getSocialLinks"
+  );
+  //set data
+  facebookLinks.forEach((link) => {
+    const parentLink = link.parentElement;
+    parentLink.setAttribute("href", mySocialLinks.facebook);
+  });
 
-linkedInLinks.forEach((link) => {
-  const parentLink = link.parentElement;
-  parentLink.setAttribute("href", mySocialLinks.linkedInLink);
-});
+  instagramLinks.forEach((link) => {
+    const parentLink = link.parentElement;
+    parentLink.setAttribute("href", mySocialLinks.instagram);
+  });
+
+  linkedInLinks.forEach((link) => {
+    const parentLink = link.parentElement;
+    parentLink.setAttribute("href", mySocialLinks.linkedin);
+  });
+}
+
+setLinks();
