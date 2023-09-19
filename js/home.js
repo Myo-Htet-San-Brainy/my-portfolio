@@ -5,14 +5,20 @@ const dadJoke = document.querySelector(".dad-joke");
 const emojisContainer = document.getElementById("sparkleContainer");
 
 // IMPORTS
-import { myResumeLink } from "./data.js";
-const url = "https://icanhazdadjoke.com/";
+import fetchData from "./fetchData.js";
+const dadJokeUrl = "https://icanhazdadjoke.com/";
 
 // LOGIC
-function addResumeLink() {
-  resume.setAttribute("href", myResumeLink);
+//resume logic
+async function fetchDataAndSetResumeLink() {
+  //fetch data
+  const resumeUrl =
+    "https://my-portfolio-a88p.onrender.com/api/v1/links/resume";
+  const data = await fetchData(resumeUrl);
+  //set resume link
+  resume.setAttribute("href", data.link);
 }
-addResumeLink();
+fetchDataAndSetResumeLink();
 
 //dad joke logic
 dadJokeBtn.addEventListener("click", () => {
@@ -34,7 +40,7 @@ dadJokeBtn.addEventListener("click", () => {
 async function getDadJoke() {
   try {
     dadJoke.textContent = "loading...";
-    const res = await fetch(url, {
+    const res = await fetch(dadJokeUrl, {
       headers: {
         Accept: "application/json",
         "User-Agent": "learning app",

@@ -1,5 +1,9 @@
-const fetchData = async (url) => {
+const fetchData = async (url, elementToDisplayLoading = null) => {
   try {
+    //checking if should display loading
+    if (elementToDisplayLoading) {
+      elementToDisplayLoading.textContent = "fetching data:))";
+    }
     const res = await fetch(url);
     const data = await res.json();
     if (!data.success) {
