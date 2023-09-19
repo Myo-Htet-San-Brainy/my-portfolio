@@ -34,7 +34,7 @@ async function fetchDataAndDisplayWorks() {
                 ${work.text}
               </p>
               <div class="project-info-container-footer">
-                <button class="client-info" type="button" data-id='${work.id}'>client info</button>
+                <button class="client-info" type="button" data-id='${work._id}'>client info</button>
                 <a href="${work.siteUrl}" class="project-live-demo" target="blank"> Live Demo </a>
               </div>
             </div>
@@ -68,7 +68,7 @@ async function fetchDataAndDisplayWorks() {
 
   function fetchClientData(id) {
     const clickedWork = works.filter((work) => {
-      if (work.id == id) {
+      if (work._id == id) {
         return work;
       }
     });
