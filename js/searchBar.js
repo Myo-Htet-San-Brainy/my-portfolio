@@ -5,20 +5,29 @@ const formInput = document.querySelector(".search-input");
 const projectsContainer = document.querySelector(".projects-center");
 
 //IMPORTS
-import { allMyProjects } from "./data.js";
+import fetchData from "./fetchData.js";
+
 //LOGIC
 
-form.addEventListener("keyup", () => {
-  //get input value
-  const searchText = formInput.value.toLowerCase();
-  //filter projects based on the input value
-  const filteredProjects = allMyProjects.filter((project) => {
-    project.name = project.name.toLowerCase();
-    return project.name.includes(searchText);
+async function fetchDataAndAddListener() {
+  const projectsUrl = "https://my-portfolio-a88p.onrender.com/api/v1/projects";
+  //fetch data
+  const allMyProjects = await fetchData(projectsUrl);
+  //add listener
+  form.addEventListener("keyup", () => {
+    //get input value
+    const searchText = formInput.value.toLowerCase();
+    //filter projects based on the input value
+    const filteredProjects = allMyProjects.filter((project) => {
+      project.name = project.name.toLowerCase();
+      return project.name.includes(searchText);
+    });
+    //display
+    display(filteredProjects);
   });
-  //display
-  display(filteredProjects);
-});
+}
+
+fetchDataAndAddListener();
 
 function display(projects) {
   if (projects.length <= 0) {
