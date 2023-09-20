@@ -7,7 +7,7 @@ import fetchData from "./fetchData.js";
 
 //LOGIC
 async function fetchDataAndDisplayProjects() {
-  const projectsUrl = "https://my-portfolio-a88p.onrender.com/api/v1/projects";
+  const projectsUrl = "http://localhost:5000/api/v1/projects";
   //fetch Data
   const allMyProjects = await fetchData(projectsUrl, projectsContainer);
   // display projects

@@ -12,7 +12,7 @@ import fetchData from "./fetchData.js";
 
 //LOGIC
 async function fetchDataAndDisplayWorks() {
-  const worksUrl = "https://my-portfolio-a88p.onrender.com/api/v1/works";
+  const worksUrl = "http://localhost:5000/api/v1/works";
   //fetch data
   const works = await fetchData(worksUrl, worksContainer);
   // display works and make 'client info' btns work
@@ -79,7 +79,7 @@ async function fetchDataAndDisplayWorks() {
 fetchDataAndDisplayWorks();
 
 async function fetchDataAndDisplayMetrics() {
-  const metricsUrl = "https://my-portfolio-a88p.onrender.com/api/v1/metrics";
+  const metricsUrl = "http://localhost:5000/api/v1/metrics";
   //fetch data
   const metrics = await fetchData(metricsUrl);
   //display metrics logic

@@ -12,8 +12,7 @@ const dadJokeUrl = "https://icanhazdadjoke.com/";
 //resume logic
 async function fetchDataAndSetResumeLink() {
   //fetch data
-  const resumeUrl =
-    "https://my-portfolio-a88p.onrender.com/api/v1/links/resume";
+  const resumeUrl = "http://localhost:5000/api/v1/links/resume";
   const data = await fetchData(resumeUrl);
   //set resume link
   resume.setAttribute("href", data.link);

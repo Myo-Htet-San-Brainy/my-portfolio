@@ -35,8 +35,7 @@ date.textContent = new Date().getFullYear();
 // INCLUDE REAL LINKS IN SOCIAL ICONS IN FOOTERS AND SIDEBAR
 
 async function setLinks() {
-  const socialLinksUrl =
-    "https://my-portfolio-a88p.onrender.com/api/v1/links/getSocialLinks";
+  const socialLinksUrl = "http://localhost:5000/api/v1/links/getSocialLinks";
   //fetch social links
   const mySocialLinks = await fetchData(socialLinksUrl);
   //set data
