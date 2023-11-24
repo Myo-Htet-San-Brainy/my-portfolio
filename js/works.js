@@ -18,11 +18,13 @@ async function fetchDataAndDisplayWorks() {
   // display works and make 'client info' btns work
   if (works.length <= 0) {
     noWorksText.style.display = "block";
-  } else {
-    //show all data
-    let workElements = [];
-    works.forEach((work) => {
-      const workElement = `<article class="project">
+    return;
+  }
+
+  //show all data
+  let workElements = [];
+  works.forEach((work) => {
+    const workElement = `<article class="project">
             <img
               src="${work.img}"
               alt="a project"
@@ -39,17 +41,16 @@ async function fetchDataAndDisplayWorks() {
               </div>
             </div>
           </article>`;
-      workElements.push(workElement);
+    workElements.push(workElement);
+  });
+  worksContainer.innerHTML = workElements.join("");
+  //make buttons work
+  const workBtns = document.querySelectorAll(".client-info");
+  workBtns.forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      displayModal(e.target.dataset.id);
     });
-    worksContainer.innerHTML = workElements.join("");
-    //make buttons work
-    const workBtns = document.querySelectorAll(".client-info");
-    workBtns.forEach((btn) => {
-      btn.addEventListener("click", (e) => {
-        displayModal(e.target.dataset.id);
-      });
-    });
-  }
+  });
 
   // Close Modal Btn Logic
   closeModalBtn.addEventListener("click", () => {

@@ -10,14 +10,14 @@ async function fetchDataAndDisplayProjects() {
   const projectsUrl = "https://my-portfolio-a88p.onrender.com/api/v1/projects";
   //fetch Data
   const allMyProjects = await fetchData(projectsUrl, projectsContainer);
-  // display projects
   if (allMyProjects.length <= 0) {
-    noProjectsText.style.display = "block";
-  } else {
-    //show all data
-    let projectElements = [];
-    allMyProjects.forEach((project) => {
-      const projectElement = `<article class="project">
+    noWorksText.style.display = "block";
+    return;
+  }
+  //show all data
+  let projectElements = [];
+  allMyProjects.forEach((project) => {
+    const projectElement = `<article class="project">
             <img
               src= ${project.img}
               alt="a project"
@@ -36,10 +36,9 @@ async function fetchDataAndDisplayProjects() {
               </div>
             </div>
           </article>`;
-      projectElements.push(projectElement);
-    });
-    projectsContainer.innerHTML = projectElements.join("");
-  }
+    projectElements.push(projectElement);
+  });
+  projectsContainer.innerHTML = projectElements.join("");
 }
 
 fetchDataAndDisplayProjects();

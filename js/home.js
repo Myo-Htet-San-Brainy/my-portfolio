@@ -57,3 +57,8 @@ async function getDadJoke() {
 }
 
 getDadJoke();
+
+// DOWN TIME NOTICE
+alert(
+  "You may have to wait a few minutes because it takes a while to spin up the free server that I am using for now. You may leave the tab open and do something else, after a few minutes, please come back. Big update on the site is coming. Please bear with this for now."
+);
